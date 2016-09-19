@@ -15,9 +15,9 @@ public class RachaelFunction extends Data
 	protected static ArrayList<String> negList = new ArrayList<String>();
 
 	public void addQual() {
-		qualMap.put(1, "Wait..before you \"quit\". We should proably talk more about what you said that  ");
-		qualMap.put(2, "Don't \"quit\" now. You are making a lot of progress . Remember awhile ago you said ");
-		qualMap.put(3, "Are you sure about this ...If you leave now and \"quit\" we wouldn't be able to talk about ");
+		qualMap.put(1, "Wait..before you \"quit\". We should proably talk more");
+		qualMap.put(2, "Don't \"quit\" now. You are making a lot of progress.. ");
+		qualMap.put(3, "Are you sure about this ...If you leave now and \"quit\" we wouldn't be able to talk more ");
 	}
 	
 	public ArrayList<String> getLogList() {
@@ -32,8 +32,9 @@ public class RachaelFunction extends Data
 	public int addlog(String resp) {
 		logList.add(resp);
 		if (value(resp)>=0) posList.add(resp);
-		System.out.println("Pos---" + posList);
+		System.out.println("Pos---" + value(resp)+ posList);
 		if (value(resp)<0) negList.add(resp);
+		System.out.println("Pos---" + value(resp)+ posList);
 		int size = logList.size();
 		return size;
 	}
@@ -63,7 +64,7 @@ public class RachaelFunction extends Data
 		for (int j = 0; j < parts.length; j++) {
 			if (getIfExists(parts[j]) == 1) {
 				score = score + 4;
-			} else if (getIfExists(parts[j]) == 1)
+			} else if (getIfExists(parts[j]) == 2)
 				score = score - 4;
 
 		}

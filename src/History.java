@@ -5,9 +5,9 @@ import java.util.Random;
 
 public class History extends RachaelFunction {
 
-	private Map<Integer, String> histMap1 = new HashMap<Integer, String>();
-	private Map<Integer, String> histMap2 = new HashMap<Integer, String>();
-	private Map<Integer, String> histMap3 = new HashMap<Integer, String>();
+	private static Map<Integer, String> histMap1 = new HashMap<Integer, String>();
+	private static Map<Integer, String> histMap2 = new HashMap<Integer, String>();
+	private static Map<Integer, String> histMap3 = new HashMap<Integer, String>();
 
 	public boolean isvague(String s) {
 		String delim = " ";
@@ -80,10 +80,10 @@ public class History extends RachaelFunction {
 	}
 
 	public String getPos() {
-		System.out.println("Pos---" + posList);
+//		System.out.println("Pos---" + posList);
 		Random rnd = new Random();
 		int r = rnd.nextInt(posList.size());
-		System.out.println(r + "--getPos");
+//		System.out.println(r + "--getPos");
 		return posList.get(r);
 
 	}

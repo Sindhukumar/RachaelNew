@@ -2,47 +2,49 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class RachaelEmotion extends Data{
+public class RachaelEmotion extends Data {
 	Random rnd = new Random();
-	String output = "";
+	String output;
 	public Map<Integer, String> positiveSet = new HashMap<Integer, String>();
 	public Map<Integer, String> negativeSet = new HashMap<Integer, String>();
-	populateSets();
-	
-	public String getSentiment(String response){
+
+	public String getSentiment(String response) {
 		populateSets();
 		String delim = " ";
 		String[] parts = response.split(delim);
-		
+		boolean flag = false;
+
 		for (int i = 0; i < parts.length; i++) {
 			int emotion;
 			emotion = getIfExists(parts[i]);
-			if(emotion == 1){
+			if (emotion == 1) {
 				int randomIntPositive = 1 + rnd.nextInt(8);
-				output += positiveSet.get(randomIntPositive);
-				break;
-			}
-			if(emotion == 2){
+				output = positiveSet.get(randomIntPositive);
+				flag = true;
+			} else if (emotion == 2) {
 				int randomIntNegative = 1 + rnd.nextInt(8);
-				output += negativeSet.get(randomIntNegative);
-				break;
+				output = negativeSet.get(randomIntNegative);
+				flag = true;
 			}
-			//output = "How do you feel about " + parts[i] + "? GOOD, BAD or OK";			
-			//replacementMap.put();
 		}
-		return getResponse(response);
-	}
-	public String getResponse(String response){
-		int randomInt = 1 + rnd.nextInt(2);
-		if (randomInt == 1) {
-			output += getHedge();
-		} 
-		else if (randomInt == 2) {
-			output += getReplacement(response);
-			output += getQualifier();
+		if (flag == false) {
+			output = getResponse(response);
 		}
 		return output;
 	}
+
+	public String getResponse(String inputResponse) {
+		String output2 = "";
+		int randomInt = 1 + rnd.nextInt(2);
+		if (randomInt == 1) {
+			output2 += getHedge();
+		} else if (randomInt == 2) {
+			output2 += getReplacement(inputResponse);
+			output2 += " " + getQualifier();
+		}
+		return output2;
+	}
+
 	public void populateSets() {
 		positiveSet.put(1, "Im glad you are feeling that way. ");
 		positiveSet.put(2, "That is good. ");
@@ -52,7 +54,7 @@ public class RachaelEmotion extends Data{
 		positiveSet.put(6, "Fantastic! ");
 		positiveSet.put(7, "Great! ");
 		positiveSet.put(8, "Glad to hear that. ");
-		
+
 		negativeSet.put(1, "You do sound low. ");
 		negativeSet.put(2, "Hmm. ");
 		negativeSet.put(3, "I need to know more. ");

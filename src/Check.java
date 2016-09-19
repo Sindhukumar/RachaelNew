@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Check {
-	HashMap<String, Integer> mostMiss = new HashMap<String, Integer>();
+	//HashMap<String, Integer> mostMiss = new HashMap<String, Integer>();
 	ArrayList<String> dict = new ArrayList<String>();
 
-	Check() {
+	public Check() {
 		try {
 			File file = new File("/usr/share/dict/words");
 			Scanner fileSc = new Scanner(file);
@@ -20,15 +20,15 @@ public class Check {
 			e.printStackTrace();
 		}
 	}
-	
-	public void displayDict(){
-		for(String d:dict)
-		System.out.println(d);
-	}
-	
-	public void displayMostMiss(){
-		System.out.println(mostMiss);
-	}
+//	
+//	public void displayDict(){
+//		for(String d:dict)
+//		System.out.println(d);
+//	}
+//	
+//	public void displayMostMiss(){
+//		System.out.println(mostMiss);
+//	}
 
 	public boolean checking(String phrase) throws FileNotFoundException {
 
@@ -44,8 +44,9 @@ public class Check {
 			if (!isMatch) {
 				System.out.println(s + " is not a word");
 				hasError = true;
-				mostMiss.put(s, mostMiss.get(s)==null?1:mostMiss.get(s)+1);
+		//		mostMiss.put(s, mostMiss.get(s)==null?1:mostMiss.get(s)+1);
 			}
+			isMatch=false;
 		}
 		return hasError;
 	}
