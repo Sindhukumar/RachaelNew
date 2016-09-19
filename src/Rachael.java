@@ -8,7 +8,6 @@ public class Rachael {
 	RachaelEmotion re = new RachaelEmotion();
 
 	public void Start() {
-
 		System.out.println("Enter your response or Quit to exit");
 		Scanner scan = new Scanner(System.in);
 		String response = scan.nextLine();
