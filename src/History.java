@@ -80,8 +80,9 @@ public class History extends RachaelFunction {
 	}
 
 	public String getPos() {
+		System.out.println("Pos---" + posList);
 		Random rnd = new Random();
-		int r = rnd.nextInt(posList.size()>0?posList.size():1);
+		int r = rnd.nextInt(posList.size());
 		System.out.println(r + "--getPos");
 		return posList.get(r);
 
@@ -103,17 +104,17 @@ public class History extends RachaelFunction {
 		int o = rnd.nextInt(2);
 		if (o == 0) {
 			if (score > 0)
-				res = getHistMap1() + getPos() + getHistMap3();
+				res = getHistMap1() + getReplacement(getPos()) + getHistMap3();
 			if (score <0 )
-				res = getHistMap1() + getNeg() + getHistMap3();
+				res = getHistMap1() + getReplacement(getNeg()) + getHistMap3();
 			
 		}
 
 		else {
 			if (score > 0)
-				res = getHistMap2() + getPos() + getHistMap3();
+				res = getHistMap2() + getReplacement(getPos()) + getHistMap3();
 			if (score <0 )
-				res = getHistMap2() + getNeg() + getHistMap3();
+				res = getHistMap2() + getReplacement(getNeg()) + getHistMap3();
 		}
 		return res;
 	}

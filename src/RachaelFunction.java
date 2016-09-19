@@ -10,9 +10,9 @@ public class RachaelFunction extends Data
 {
 	protected HashMap<Integer, String> qualMap = new HashMap<Integer, String>();
 
-	protected ArrayList<String> logList = new ArrayList<String>();
-	protected ArrayList<String> posList = new ArrayList<String>();
-	protected ArrayList<String> negList = new ArrayList<String>();
+	protected static ArrayList<String> logList = new ArrayList<String>();
+	protected static ArrayList<String> posList = new ArrayList<String>();
+	protected static ArrayList<String> negList = new ArrayList<String>();
 
 	public void addQual() {
 		qualMap.put(1, "Wait..before you \"quit\". We should proably talk more about what you said that  ");
@@ -32,7 +32,7 @@ public class RachaelFunction extends Data
 	public int addlog(String resp) {
 		logList.add(resp);
 		if (value(resp)>=0) posList.add(resp);
-		System.out.println("pos--" + posList);
+		System.out.println("Pos---" + posList);
 		if (value(resp)<0) negList.add(resp);
 		int size = logList.size();
 		return size;

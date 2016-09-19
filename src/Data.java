@@ -27,18 +27,18 @@ public class Data {
 		salutationSet.add("Hi");
 		salutationSet.add("Hello");
 		salutationSet.add("Greetings");
-		hedgeSet.add("Interesting, Please tell me more");
-		hedgeSet.add("Many of my patients tell me the same thing");
-		hedgeSet.add("It is getting late, maybe we had better quit");
-		hedgeSet.add("That is very common these days I must say.");
-		hedgeSet.add("When did this start?");
-		hedgeSet.add("Hmm...Go on");
-		hedgeSet.add("Really?");
-		hedgeSet.add("I see whats going on here. Give me more details.");
-		hedgeSet.add("How often do you feel this way?");
-		qualifierSet.add("Why do you say that");
-		qualifierSet.add("You seem to think that");
-		qualifierSet.add("So, you are concerned that");
+		hedgeSet.add("Interesting, Please tell me more ");
+		hedgeSet.add("Many of my patients tell me the same thing ");
+		hedgeSet.add("It is getting late, maybe we had better quit ");
+		hedgeSet.add("That is very common these days I must say. ");
+		hedgeSet.add("When did this start? ");
+		hedgeSet.add("Hmm...Go on ");
+		hedgeSet.add("Really? ");
+		hedgeSet.add("I see whats going on here. Give me more details. ");
+		hedgeSet.add("How often do you feel this way? ");
+		qualifierSet.add(" Why do you say that ");
+		qualifierSet.add(" You seem to think that");
+		qualifierSet.add(" So, you are concerned that");
 		replacementMap.put("i", "you");
 		replacementMap.put("me", "you");
 		replacementMap.put("my", "your");
@@ -51,7 +51,7 @@ public class Data {
 
 		// get the positive words from file
 		try {
-			File file = new File("/home/oracle/workspace/Rachael/positive-words.txt");
+			File file = new File("/home/oracle/workspace/java/RachaelNew/positive-words.txt");
 			Scanner fileSc = new Scanner(file);
 			while (fileSc.hasNext()) {
 				keyword.put(fileSc.nextLine(), 1);
@@ -63,7 +63,7 @@ public class Data {
 
 		// get the negative words from file
 		try {
-			File file = new File("/home/oracle/workspace/Rachael/negative-words.txt");
+			File file = new File("/home/oracle/workspace/java/RachaelNew/negative-words.txt");
 			Scanner fileSc = new Scanner(file);
 			while (fileSc.hasNext()) {
 				keyword.put(fileSc.nextLine(), 2);
