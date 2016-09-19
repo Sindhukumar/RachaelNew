@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,18 +6,15 @@ public class Rachael {
 	History hs = new History();
 	RachaelFunction rf = new RachaelFunction();
 	RachaelEmotion re = new RachaelEmotion();
-	Check ch= new Check();
-	
-	public void Start() throws FileNotFoundException {
-	//	System.out.println("Enter your response or Quit to exit");
+
+	public void Start() {
+		System.out.println("Enter your response or Quit to exit");
 		Scanner scan = new Scanner(System.in);
 		String response = scan.nextLine();
 		Interaction(response);
 	}
 
-	public void Interaction(String response) throws FileNotFoundException {
-		boolean spellCheck = ch.checking(response);
-		while (!spellCheck){
+	public void Interaction(String response) {
 		if (!response.equalsIgnoreCase("Quit")) {
 
 			boolean isVague = hs.isvague(response);
@@ -41,6 +37,7 @@ public class Rachael {
 			}
 
 		} else if (response.equalsIgnoreCase("Quit")) {
+<<<<<<< HEAD
 			quit(response);
 		
 		}
@@ -48,9 +45,13 @@ public class Rachael {
 		if (spellCheck) {
 			System.out.println("Sorry I did not get you , Please re-enter your resposne");
 			Start();
+=======
+			quit("quit");
+>>>>>>> 85c6b0dbb4308241e68a299540cd75f42cbc401c
 		}
+
 	}
-	public void quit(String resp) throws FileNotFoundException {
+	public void quit(String resp) {
 		for (int i = 1; i <= 4; i++) {
 			if (resp.equalsIgnoreCase("quit") && ((i == 1) || (i == 2) || (i == 3)))
 				System.out.println(rf.qualMap.get(i) + hs.HistQuestion(resp));
@@ -59,8 +60,7 @@ public class Rachael {
 				Interaction(resp);
 			}
 
-			if (resp.equalsIgnoreCase("quit") && (
-					i == 4)) {
+			if (resp.equalsIgnoreCase("quit") && (i == 4)) {
 				System.out.println("Hmm.. if you really want to leave then alright.");
 				System.out.println(
 						"Wait!! dont leave already. You still have to pay me for this session. The cost for today's session will be  "
