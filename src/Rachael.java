@@ -65,6 +65,7 @@ public class Rachael {
 				System.out.println(
 						"Wait!! dont leave already. You still have to pay me for this session. The cost for today's session will be  "
 								+ rf.cost());
+//				rf.logFile();
 				System.out.println("Bye! See you next time. Until then try to stay positive and be Happy :)");
 
 			}
