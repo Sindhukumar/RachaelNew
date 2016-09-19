@@ -29,7 +29,7 @@ public class Data {
 		salutationSet.add("Greetings");
 		hedgeSet.add("Interesting, Please tell me more ");
 		hedgeSet.add("Many of my patients tell me the same thing ");
-		hedgeSet.add("It is getting late, maybe we had better quit ");
+		hedgeSet.add("Please go on");
 		hedgeSet.add("That is very common these days I must say. ");
 		hedgeSet.add("When did this start? ");
 		hedgeSet.add("Hmm...Go on ");

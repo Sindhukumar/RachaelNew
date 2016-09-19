@@ -8,16 +8,16 @@ import java.util.HashMap;
 public class RachaelFunction extends Data
 
 {
-	protected HashMap<Integer, String> qualMap = new HashMap<Integer, String>();
+	protected static HashMap<Integer, String> qualMap = new HashMap<Integer, String>();
 
 	protected static ArrayList<String> logList = new ArrayList<String>();
 	protected static ArrayList<String> posList = new ArrayList<String>();
 	protected static ArrayList<String> negList = new ArrayList<String>();
 
 	public void addQual() {
-		qualMap.put(1, "Wait..before you \"quit\". We should proably talk more");
+		qualMap.put(1, "Wait..before you \"quit\". We should proably talk more ..");
 		qualMap.put(2, "Don't \"quit\" now. You are making a lot of progress.. ");
-		qualMap.put(3, "Are you sure about this ...If you leave now and \"quit\" we wouldn't be able to talk more ");
+		qualMap.put(3, "Are you sure about this ...If you leave now and \"quit\" we wouldn't be able to talk more ..");
 	}
 	
 	public ArrayList<String> getLogList() {
@@ -32,12 +32,24 @@ public class RachaelFunction extends Data
 	public int addlog(String resp) {
 		logList.add(resp);
 		if (value(resp)>=0) posList.add(resp);
-		System.out.println("Pos---" + value(resp)+ posList);
+//		System.out.println("Pos---" + value(resp)+ posList);
 		if (value(resp)<0) negList.add(resp);
-		System.out.println("Pos---" + value(resp)+ posList);
+//		System.out.println("Neg---" + value(resp)+ negList);
 		int size = logList.size();
 		return size;
 	}
+//	
+//	public String getPosList(int i)
+//	{
+//		return posList.get(i);
+//	}
+//	
+//	public String getNegList(int i)
+//	{
+//		return negList.get(i);
+//	}
+//	
+	
 
 	public void logFile() {
 		PrintWriter writer = null;

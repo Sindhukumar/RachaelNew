@@ -9,6 +9,13 @@ public class History extends RachaelFunction {
 	private static Map<Integer, String> histMap2 = new HashMap<Integer, String>();
 	private static Map<Integer, String> histMap3 = new HashMap<Integer, String>();
 
+	public History()
+	{
+		setHistMap1();
+		setHistMap2();
+		setHistMap3();
+	}
+	
 	public boolean isvague(String s) {
 		String delim = " ";
 		String[] parts = s.split(delim);
@@ -22,7 +29,7 @@ public class History extends RachaelFunction {
 				score = score + 1;
 
 		}
-		if (score >= 8)
+		if (score >= 7)
 			vague = false;
 		else
 			vague = true;
@@ -32,11 +39,11 @@ public class History extends RachaelFunction {
 	ArrayList<String> loglist = new ArrayList<String>();
 
 	public void setHistMap1() {
-		histMap1.put(0, "You said that, ");
-		histMap1.put(1, "Do you remeber saying ");
-		histMap1.put(2, "You did say that ");
+		histMap1.put(0, "You said that,");
+		histMap1.put(1, "Do you remeber saying");
+		histMap1.put(2, "You did say that");
 		histMap1.put(3, "Interesting, and you did say");
-		histMap1.put(4, "I understand, especially becuase you said, ");
+		histMap1.put(4, "I understand, especially becuase you said,");
 		histMap1.put(5, "Exactly and you even said");
 
 	}
@@ -48,12 +55,12 @@ public class History extends RachaelFunction {
 	}
 
 	public void setHistMap2() {
-		histMap2.put(0, "However you said that, ");
-		histMap2.put(1, "Do you remeber saying ");
-		histMap2.put(2, "But you did say that ");
-		histMap2.put(3, "Interesting, but you said ");
-		histMap2.put(4, "I understand, but were you confused when you said ");
-		histMap2.put(5, "Maybe you felt different when you said ");
+		histMap2.put(0, "However you said that,");
+		histMap2.put(1, "Do you remeber saying");
+		histMap2.put(2, "But you did say that");
+		histMap2.put(3, "Interesting, but you said");
+		histMap2.put(4, "I understand, but were you confused when you said");
+		histMap2.put(5, "Maybe you felt different when you said");
 
 	}
 
@@ -100,7 +107,6 @@ public class History extends RachaelFunction {
 		String res=null;
 		int score = value(s);
 		Random rnd = new Random();
-
 		int o = rnd.nextInt(2);
 		if (o == 0) {
 			if (score > 0)
