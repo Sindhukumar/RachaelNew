@@ -41,7 +41,7 @@ public class Rachael {
 			}
 
 		} else if (response.equalsIgnoreCase("Quit")) {
-			quit("quit");
+			quit(response);
 		
 		}
 		}
